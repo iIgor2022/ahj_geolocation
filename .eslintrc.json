@@ -1,0 +1,41 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 13,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "no-restricted-syntax": ["error", "LabeledStatement", "WithStatement"],
+    "allowTernary": "off",
+    "no-plusplus": "off",
+    "no-alert": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "operator-linebreak": "off",
+    "no-unused-vars": "off",
+    "comma-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off",
+    "prefer-template": "off",
+    "object-curly-newline": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off"}
+    }
+  ]
+}
