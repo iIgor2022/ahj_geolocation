@@ -15,7 +15,7 @@ export default class Widget {
         <div class="list"></div>
         <div class="footer">
           <form class="form">
-            <input class="form-input" name="input" type="text">
+            <input class="form-input" name="input" type="text" placeholder="Введите название места">
           </form>
         </div>
       `,
@@ -89,7 +89,7 @@ export default class Widget {
           </p>
           <p>Широта и долгота через запятую:</p>
           <form class="modal-form">
-            <input class="modal-input" name="modal" type="text">
+            <input class="modal-input" name="modal" type="text" placeholder="ЧЧ.ЧЧЧЧЧЧЧ, ЧЧ.ЧЧЧЧЧЧЧ">
             <div class="buttons">
               <button type="reset" class="reset">Отмена</button>
               <button type="submit" class="ok">Ок</button>
@@ -100,6 +100,8 @@ export default class Widget {
     });
 
     this.container.querySelector(".widget-container").appendChild(modal);
+
+    this.container.querySelector(".modal-input").focus();
 
     this.container
       .querySelector(".modal-input")
@@ -114,7 +116,7 @@ export default class Widget {
 
         if (isValid) {
           this.hideModal();
-          this.showModal(isValid);
+          this.showTicket(isValid);
         } else {
           alert("Координаты введены неверно");
         }
